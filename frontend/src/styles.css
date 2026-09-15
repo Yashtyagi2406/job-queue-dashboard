@@ -1,0 +1,194 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f7f9;
+  color: #1c2430;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #d0d5dd;
+  background: white;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.count-card {
+  background: white;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.count-number {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.count-label {
+  text-transform: capitalize;
+  color: #667085;
+  font-size: 0.8rem;
+}
+.count-pending .count-number { color: #b54708; }
+.count-running .count-number { color: #175cd3; }
+.count-completed .count-number { color: #067647; }
+.count-failed .count-number { color: #b42318; }
+
+.new-job-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.new-job-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 7px 10px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+}
+.new-job-form select {
+  padding: 7px 10px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+}
+.new-job-form button {
+  background: #175cd3;
+  color: white;
+  border-color: #175cd3;
+}
+.form-error {
+  color: #b42318;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+.filter-bar select {
+  padding: 6px 8px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+}
+
+.banner {
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+.banner-error {
+  background: #fef3f2;
+  color: #b42318;
+  border: 1px solid #fecdca;
+}
+.banner-info {
+  background: #eff8ff;
+  color: #175cd3;
+  border: 1px solid #b2ddff;
+}
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.jobs-table th,
+.jobs-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 0.9rem;
+}
+.jobs-table th {
+  background: #f9fafb;
+  color: #667085;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.row-busy {
+  opacity: 0.6;
+}
+.empty-row {
+  text-align: center;
+  color: #667085;
+  padding: 24px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.badge-pending { background: #fef0e6; color: #b54708; }
+.badge-running { background: #eff8ff; color: #175cd3; }
+.badge-completed { background: #ecfdf3; color: #067647; }
+.badge-failed { background: #fef3f2; color: #b42318; }
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-status {
+  font-size: 0.78rem;
+  padding: 4px 8px;
+}
+.btn-running { border-color: #175cd3; color: #175cd3; }
+.btn-completed { border-color: #067647; color: #067647; }
+.btn-failed { border-color: #b42318; color: #b42318; }
+.btn-delete {
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  color: #667085;
+}
+.terminal-note {
+  font-size: 0.78rem;
+  color: #98a2b3;
+  font-style: italic;
+}

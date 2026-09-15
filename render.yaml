@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: job-queue-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DB_PATH
+        value: job-queue.sqlite
+      - key: CORS_ORIGIN
+        value: https://job-queue-dashboard.vercel.app
+    plan: free
