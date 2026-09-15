@@ -85,13 +85,12 @@ export class JobsService {
       throw new NotFoundException(`Job ${id} not found`);
     }
 
-    const allowedFrom = current.status;
-    if (!ALLOWED_TRANSITIONS[allowedFrom]?.includes(nextStatus)) {
+    if (!ALLOWED_TRANSITIONS[current.status]?.includes(nextStatus)) {
       throw new UnprocessableEntityException(
-        `Invalid transition: cannot move job from '${allowedFrom}' to '${nextStatus}'. ` +
-          `Allowed next states from '${allowedFrom}': ${
-            ALLOWED_TRANSITIONS[allowedFrom]?.length
-              ? ALLOWED_TRANSITIONS[allowedFrom].join(', ')
+        `Invalid transition: cannot move job from '${current.status}' to '${nextStatus}'. ` +
+          `Allowed next states from '${current.status}': ${
+            ALLOWED_TRANSITIONS[current.status]?.length
+              ? ALLOWED_TRANSITIONS[current.status].join(', ')
               : 'none (terminal state)'
           }.`,
       );
@@ -105,7 +104,7 @@ export class JobsService {
       .set({ status: nextStatus })
       .where('id = :id AND status = :expected', {
         id,
-        expected: allowedFrom,
+        expected: current.status,
       })
       .execute();
 

@@ -24,4 +24,3 @@ export class UpdateJobStatusDto {
   status: JobStatus;
 }
 
-export { JOB_TYPES };

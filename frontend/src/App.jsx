@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { fetchJobs, createJob, updateJobStatus, deleteJob } from './api';
 
 const STATUSES = ['pending', 'running', 'completed', 'failed'];

@@ -175,7 +175,8 @@ button:disabled {
   flex-wrap: wrap;
   align-items: center;
 }
-.btn-status {
+.btn-status,
+.btn-delete {
   font-size: 0.78rem;
   padding: 4px 8px;
 }
@@ -183,8 +184,6 @@ button:disabled {
 .btn-completed { border-color: #067647; color: #067647; }
 .btn-failed { border-color: #b42318; color: #b42318; }
 .btn-delete {
-  font-size: 0.78rem;
-  padding: 4px 8px;
   color: #667085;
 }
 .terminal-note {
