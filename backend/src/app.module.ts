@@ -1,7 +1,15 @@
-import { Module } from '@nestjs/common';
+import { Controller, Get, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JobsModule } from './jobs/jobs.module';
 import { Job } from './jobs/job.entity';
+
+@Controller('health')
+class HealthController {
+  @Get()
+  check() {
+    return { status: 'ok' };
+  }
+}
 
 @Module({
   imports: [
@@ -13,5 +21,6 @@ import { Job } from './jobs/job.entity';
     }),
     JobsModule,
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}
