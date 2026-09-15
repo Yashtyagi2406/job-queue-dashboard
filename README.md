@@ -5,6 +5,18 @@ A small full-stack job queue management dashboard.
 - **Backend:** NestJS + TypeORM + SQLite
 - **Frontend:** React (Vite)
 
+## Live Links
+
+| | URL |
+|---|---|
+| 🔗 GitHub Repository | https://github.com/Yashtyagi2406/job-queue-dashboard |
+| 🖥 Live Frontend (Vercel) | https://job-queue-dashboard-seven.vercel.app |
+| ⚙️ Live Backend API (Render) | https://job-queue-backend.onrender.com |
+
+> **Note on persistence:** The backend runs on Render's free tier with SQLite. The SQLite file lives on Render's ephemeral filesystem, which means **job data resets on every redeploy** (the API auto-recreates the schema). This is fine for a demo; for persistent storage, swap `type: 'sqlite'` → `type: 'postgres'` in `app.module.ts` and point at a hosted Postgres instance.
+>
+> Render's free tier also **spins down after 15 minutes of inactivity** — the first request after a cold start may take 30–60 seconds.
+
 ## Project structure
 
 ```

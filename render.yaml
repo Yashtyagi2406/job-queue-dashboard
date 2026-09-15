@@ -11,5 +11,5 @@ services:
       - key: DB_PATH
         value: job-queue.sqlite
       - key: CORS_ORIGIN
-        value: https://job-queue-dashboard.vercel.app
+        value: https://job-queue-dashboard-seven.vercel.app
     plan: free
